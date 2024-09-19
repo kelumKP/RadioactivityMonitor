@@ -46,4 +46,3 @@ To run the tests, navigate to the `RadioactivityMonitor.Tests` directory and exe
 
   ```bash
   dotnet test
-
