@@ -1,5 +1,6 @@
 namespace RadioactivityMonitor.Infrastructure.Sensors
 {
+    // Sensor class implement the ISensor interface 
     public class Sensor : ISensor
     {
         const double Offset = 16;
