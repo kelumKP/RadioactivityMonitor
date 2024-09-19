@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioactivityMonitor.Tests", "RadioactivityMonitor.Tests\RadioactivityMonitor.Tests.csproj", "{68CFD543-61A4-4DF7-A952-7676266BB40D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioactivityMonitor.Infrastructure", "RadioactivityMonitor.Infrastructure\RadioactivityMonitor.Infrastructure.csproj", "{5010799B-1FE4-4963-B157-12DF330297DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioactivityMonitor.Domain", "RadioactivityMonitor.Domain\RadioactivityMonitor.Domain.csproj", "{3FB076FC-575B-49F3-91DD-193C8D3650D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioactivityMonitor.Application", "RadioactivityMonitor.Application\RadioactivityMonitor.Application.csproj", "{1B2073DB-08F6-4B2B-997C-09D72AC9C42C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioactivityMonitor.API", "RadioactivityMonitor.API\RadioactivityMonitor.API.csproj", "{36D586F1-99C1-4793-944C-333C1F5ED91B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB127F4C-2A8C-484B-B333-007AF34434D0}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68CFD543-61A4-4DF7-A952-7676266BB40D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68CFD543-61A4-4DF7-A952-7676266BB40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68CFD543-61A4-4DF7-A952-7676266BB40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68CFD543-61A4-4DF7-A952-7676266BB40D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5010799B-1FE4-4963-B157-12DF330297DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5010799B-1FE4-4963-B157-12DF330297DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5010799B-1FE4-4963-B157-12DF330297DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5010799B-1FE4-4963-B157-12DF330297DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB076FC-575B-49F3-91DD-193C8D3650D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB076FC-575B-49F3-91DD-193C8D3650D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB076FC-575B-49F3-91DD-193C8D3650D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB076FC-575B-49F3-91DD-193C8D3650D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2073DB-08F6-4B2B-997C-09D72AC9C42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2073DB-08F6-4B2B-997C-09D72AC9C42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2073DB-08F6-4B2B-997C-09D72AC9C42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2073DB-08F6-4B2B-997C-09D72AC9C42C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D586F1-99C1-4793-944C-333C1F5ED91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D586F1-99C1-4793-944C-333C1F5ED91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D586F1-99C1-4793-944C-333C1F5ED91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D586F1-99C1-4793-944C-333C1F5ED91B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07099DA5-1BBD-41A3-ABEF-2B5A23D957DC}
+	EndGlobalSection
+EndGlobal
