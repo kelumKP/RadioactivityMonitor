@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioactivityMonitor.Domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioactivityMonitor.Application", "RadioactivityMonitor.Application\RadioactivityMonitor.Application.csproj", "{1B2073DB-08F6-4B2B-997C-09D72AC9C42C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioactivityMonitor.API", "RadioactivityMonitor.API\RadioactivityMonitor.API.csproj", "{36D586F1-99C1-4793-944C-333C1F5ED91B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioactivityMonitor.API", "RadioactivityMonitor.API\RadioactivityMonitor.API.csproj", "{36D586F1-99C1-4793-944C-333C1F5ED91B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB127F4C-2A8C-484B-B333-007AF34434D0}"
 	ProjectSection(SolutionItems) = preProject

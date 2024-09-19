@@ -65,14 +65,16 @@ namespace RadioactivityMonitor.Tests
             // Assert
             Assert.False(_alarm.AlarmOn);
         }
-
+        
+        // failing scenario 
         [Fact]
         public void Check_AlarmShouldThrowException_WhenThresholdAreInvalid()
         {
             // Arrange
             var invalidConfigDict = new Dictionary<string, string>
         {
-            { "AlarmSettings:LowThreshold", "invalid" }, // Invalid non-numeric value
+            // Invalid non-numeric value
+            { "AlarmSettings:LowThreshold", "invalid" }, 
             { "AlarmSettings:HighThreshold", "invalid" }
         };
             var invalidConfig = new ConfigurationBuilder()

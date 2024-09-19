@@ -36,7 +36,7 @@ This project monitors radiation levels and triggers alarms based on predefined t
 2. Run the application:
 	```bash
 	dotnet run
-3. The application will start, and you can access the API at `http://localhost:5104/api/alarm/check`.
+3. The application will start, and it can access the API at `http://localhost:5104/api/alarm/check`.
 
 by accessing above URL via any browser or POSTMEN or Swaggger it can test this API
 
