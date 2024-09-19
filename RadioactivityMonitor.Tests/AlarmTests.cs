@@ -65,5 +65,25 @@ namespace RadioactivityMonitor.Tests
             // Assert
             Assert.False(_alarm.AlarmOn);
         }
+
+        [Fact]
+        public void Check_AlarmShouldThrowException_WhenThresholdAreInvalid()
+        {
+            // Arrange
+            var invalidConfigDict = new Dictionary<string, string>
+        {
+            { "AlarmSettings:LowThreshold", "invalid" }, // Invalid non-numeric value
+            { "AlarmSettings:HighThreshold", "invalid" }
+        };
+            var invalidConfig = new ConfigurationBuilder()
+                .AddInMemoryCollection(invalidConfigDict)
+                .Build();
+
+            // Act & Assert
+            Assert.Throws<FormatException>(() =>
+            {
+                var alarmWithInvalidConfig = new Alarm(_sensor, invalidConfig);
+            });
+        }
     }
 }
