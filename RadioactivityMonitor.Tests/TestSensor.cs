@@ -2,6 +2,10 @@
 
 namespace RadioactivityMonitor.Tests
 {
+    /*
+     *  'Sensor' class is responsible for generating random values, there shoul be a way to control these values for testing
+     *  This subclass allows it to inject controlled values for testing
+     */
     public class TestSensor : ISensor
     {
         private double _nextMeasure;
