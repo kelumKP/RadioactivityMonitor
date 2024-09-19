@@ -1,30 +1,24 @@
-#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-#Depending on the operating system of the host machines(s) that will build or run the containers, the image specified in the FROM statement may need to be changed.
-#For more information, please see https://aka.ms/containercompat
-
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-nanoserver-1809 AS base
+# Use the official .NET SDK image for the build stage
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0-nanoserver-1809 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["RadioactivityMonitor.API/RadioactivityMonitor.API.csproj", "RadioactivityMonitor.API/"]
-COPY ["RadioactivityMonitor.Application/RadioactivityMonitor.Application.csproj", "RadioactivityMonitor.Application/"]
-COPY ["RadioactivityMonitor.Domain/RadioactivityMonitor.Domain.csproj", "RadioactivityMonitor.Domain/"]
-COPY ["RadioactivityMonitor.Infrastructure/RadioactivityMonitor.Infrastructure.csproj", "RadioactivityMonitor.Infrastructure/"]
-RUN dotnet restore "./RadioactivityMonitor.API/RadioactivityMonitor.API.csproj"
-COPY . .
-WORKDIR "/src/RadioactivityMonitor.API"
-RUN dotnet build "./RadioactivityMonitor.API.csproj" -c %BUILD_CONFIGURATION% -o /app/build
+# Copy the project files and restore any dependencies
+COPY ./RadioactivityMonitor.API/*.csproj ./RadioactivityMonitor.API/
+COPY ./RadioactivityMonitor.Application/*.csproj ./RadioactivityMonitor.Application/
+COPY ./RadioactivityMonitor.Domain/*.csproj ./RadioactivityMonitor.Domain/
+COPY ./RadioactivityMonitor.Infrastructure/*.csproj ./RadioactivityMonitor.Infrastructure/
+RUN dotnet restore ./RadioactivityMonitor.API/RadioactivityMonitor.API.csproj
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./RadioactivityMonitor.API.csproj" -c %BUILD_CONFIGURATION% -o /app/publish /p:UseAppHost=false
+# Copy the rest of the application files
+COPY . ./
 
-FROM base AS final
+# Build the application
+RUN dotnet publish ./RadioactivityMonitor.API/RadioactivityMonitor.API.csproj -c Release -o out
+
+# Use the official ASP.NET Core runtime image for the runtime stage
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build-env /app/out ./
+
+# Set the entry point for the application
 ENTRYPOINT ["dotnet", "RadioactivityMonitor.API.dll"]
