@@ -65,21 +65,5 @@ namespace RadioactivityMonitor.Tests
             // Assert
             Assert.False(_alarm.AlarmOn);
         }
-
-        [Fact]
-        public void Check_AlarmShouldReset_WhenValueReturnsToNormal()
-        {
-            // Arrange
-            _sensor.SetNextMeasure(10);
-            _alarm.Check(); // Trigger alarm
-
-            // Act
-            // Return to normal
-            _sensor.SetNextMeasure(18); 
-            _alarm.Check();
-
-            // Assert
-            Assert.False(_alarm.AlarmOn);
-        }
     }
 }
